@@ -1,0 +1,114 @@
+@charset "utf-8";
+h2 {
+  display: none;
+}
+main {
+  margin-bottom: 120px;
+}
+.faq-item {
+  margin-bottom: 40px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #dba958;
+}
+
+.faq-question__wrap {
+  position: relative;
+  background: #dba958;
+  padding: 10px 5px 10px 55px;
+  cursor: pointer;
+}
+
+.minus-icon {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #dba958;
+}
+.plus-icon {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transition: ease all 0.5s; /* 擬似要素のトランジションを追加 */
+}
+
+.plus-icon.active {
+  transform: translateY(-50%);
+}
+
+.faq-question__title {
+  font-weight: bold;
+  color: #FFF;
+  font-size: 1.125rem;/* 18px */
+  position: relative;
+  padding-right: 50px;
+}
+.faq-question__title::before {
+    position: absolute;
+    color: #fff;
+    content: "Q";
+    top: 50%;
+    left: -35px;
+    transform: translateY(-50%);
+  }
+
+.faq-answer__wrap {
+  background: #fff;
+  padding: 10px 5px 10px 55px;
+  transition: ease all 0.5s; /* 擬似要素のトランジションを追加 */
+  height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.faq-answer__wrap.active {
+  height: auto;
+  padding: 10px 5px 10px 55px;
+}
+.faq-answer__wrap {
+  background: #fff;
+  opacity: 0;
+  padding: 10px 5px 10px 55px;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  transition: ease all 0.7s; /* 擬似要素のトランジションを追加 */
+}
+
+.faq-answer__wrap.active {
+  opacity: 1;
+  padding: 10px 5px 10px 55px;
+}
+
+.faq-answer__title {
+  position: relative;
+  font-weight: bold;
+  color: black;
+  color
+}
+
+.faq-answer__title::before {
+    position: absolute;
+    color: #dba958;
+    content: "A";
+    top: 50%;
+    left: -35px;
+  }
+
+.faq-answer__text {
+  margin-top: 5px;
+  color: #dba958;
+  	text-shadow: 0.3px 0.3px 0px rgba(92, 77, 77, 0.6);
+}

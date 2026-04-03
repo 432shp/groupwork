@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/*
+main dl {
+	width: 100%;
+	max-width: 500px;
+	margin: 20px auto;
+}
+main dl dt {
+	display: inline-block;
+}
+main dl dd {
+	padding: 1em 0;
+}*/
+body #goods .desc {
+	line-height: normal;
+}
+
+h2 {
+	display: none;
+}
+.info {
+	grid-template-columns: repeat(3, 1fr);
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+.info div {
+	max-width: 250px;
+	margin: 20px auto;
+	text-shadow: 0.4px 0.5px 0px rgba(92, 77, 77, 0.6);
+}
+
+.info dt img {
+	width: 250px;
+	height: 250px;
+	/*object-fit: cover;
+	display: block;*/
+}
+
+.info dt img:hover {
+	opacity: 0.9;
+	/* 透明度 */
+}
+
+.info dd {
+	padding: 6px 12px;
+}
+
+.desc {
+	text-align: left;
+}
+
+.name {
+	padding-top: 0.5em;
+}
+
+.name,
+.price {
+	text-align: right;
+}
+
+span {
+	font-weight: bold;
+}
+
+.info,
+.gridArea {
+	color: #dba958;
+}
+
+.info.gridArea {
+	display: grid;
+	/* 行間の間隔を調整 */
+	row-gap: 0;
+	/* または 0 に設定 */
+	/* 列間の間隔を調整 (横並びの場合) */
+	column-gap: 20px;
+	/* gap: 1px 5px; のように一括指定も可能 */
+
+}
+.bordered-image {
+	border: 3px solid #dba958;
+	/* 3pxの太さ、実線、黒色の枠線 */
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	/* 5px右、5px下に5pxぼかしの影 */
+}
+/*
+@media (max-width: 600px) {
+	.info {
+		display: block;
+	}
+	.info div {
+		margin: 10px auto;
+	}
+}*/
+
+@media (max-width: 900px) {
+	.info.gridArea {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 20px;
+		max-width: 600px;
+	}
+}
+
+@media (max-width: 600px) {
+	.info.gridArea {
+		grid-template-columns: 1fr;
+		margin: 0 auto;
+		column-gap: 20px;
+	}
+}

@@ -1,0 +1,61 @@
+@charset "utf-8";
+.message{
+	max-width: 900px;
+	margin: 0 auto;
+	font-size: 1.5rem;
+	text-align: center;
+	padding: 60px 0;
+	color: #fff;
+}
+.home{
+	max-width: 900px;
+	margin: 0 auto;
+	text-align: center;
+}
+ 
+/* Send Button Styles */
+.form-btn {
+	
+	width: 180px;
+    /* 現在のボタンのスタイル（例） */
+    display: inline-block; /* リンクはデフォルトでインライン要素なので、ブロック要素のように振る舞うように変更 */
+    padding: 15px;
+    background-color: #8BC3A3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* ここが重要: リンクの下線を消す */
+    border-radius: 5px;
+    /* その他のスタイル... */
+font-size: 16px;
+}
+
+.form-btn.semibold {
+    font-weight: 600; /* semiboldのスタイル */
+}
+.form-btn:hover{
+    background:#111;
+    color: white;
+    border:none;
+  }
+main{
+  background: #dba958;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  padding: 20px 0 50px;
+}  
+
+@media(max-width: 600px){
+
+	#contact-us{
+		width: 100%;
+		flex-direction: column;
+
+	}
+  
+
+	
+}

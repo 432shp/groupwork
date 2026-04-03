@@ -1,0 +1,86 @@
+@charset "utf-8";
+body {
+	font-size: 0.875em;
+}
+.header {
+	align-items: flex-start;
+	}
+nav ul li a::before {
+	display: none;
+}
+nav ul li.menu1 {
+	display: block;
+}
+label[for="menu"] {
+	display: block;
+	width: 30px;
+	height: 22px;
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+	z-index: 5;
+	background: none;
+	padding: 0;
+}
+/* 三本線のバー */
+label[for="menu"]::before,
+label[for="menu"]::after,
+label[for="menu"] span {
+	content: "";
+	display: block;
+	height: 3px;
+	background-color: #000; /* 線の色 */
+	margin: 5px 0;
+	border-radius: 2px;
+	transition: all 0.3s ease;
+}
+ /* 真ん中のバー */
+label[for="menu"] span {
+	width: 100%;
+}
+/* 上下のバー */
+label[for="menu"]::before,
+label[for="menu"]::after {
+	width: 100%;
+}
+/* チェック時のアニメーション（X型に変形） */
+#menu:checked + label[for="menu"]::before {
+	transform: translateY(8px) rotate(45deg);
+}
+#menu:checked + label[for="menu"]::after {
+	transform: translateY(-8px) rotate(-45deg);
+}
+#menu:checked + label[for="menu"] span {
+opacity: 0;
+	}
+header {
+	margin: 10px;
+}
+nav ul {
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	flex-direction: column;
+	background-color:#fff;
+	z-index: 1;
+	display: none;
+	height: 100%;
+}
+nav ul li {
+	text-align: center;
+}
+nav ul li a {
+	padding-top: 1em;
+	align-items: center;
+}
+nav ul li a,
+nav ul li:first-child a {
+	border-style: none;
+}
+#menu:checked ~ ul {
+	display: flex;
+}
+header {
+	position: static;
+}

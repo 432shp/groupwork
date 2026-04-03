@@ -1,0 +1,137 @@
+@charset "UTF-8";
+html {
+	overflow-y: scroll;
+}
+body {
+	/*width: 100%;*/
+	max-width: 900px;
+	margin: 0 auto;
+	background: #cccccc;
+}
+h2, dl, .banner, footer {
+	max-width: 900px;
+	margin: 0 auto;
+}
+.header {
+	display: flex;
+	max-width: 100%;
+	margin: 0;
+	justify-content: center;
+	align-items: flex-end;
+}
+header {
+	display: block;
+
+	width: 50%;
+}
+nav{
+	display: block;
+
+	width: 50%;
+}
+nav ul {
+	display: flex;
+	justify-content: flex-end;
+	white-space: nowrap; 
+}
+nav ul li {
+	margin-left: 20px; /* リンク間のスペース */
+	
+}
+nav ul li a {
+	display: block;
+	text-align: center;
+}
+main {
+	position: relative;
+	width: 100vw; /* 画面幅いっぱい */
+	margin: 0 calc(50% - 50vw); /* body中央寄せの影響を打ち消す */
+	overflow: hidden;
+}
+main img {
+	width: 100vw;     /* ビューポート幅いっぱい */
+	height: auto;     /* 縦横比を維持 */
+	display: block;
+	object-fit: contain; /* 縦横比維持（全体が収まる） */
+	object-position: center;
+	margin-top: 40px;
+}
+.content-wrapper {
+	margin: 20px 0;
+}
+h2 {
+	text-align: center;
+	background: #a9a9a9;
+	padding: 10px 20px;
+	width: 80px;
+}
+main dl {
+	width: 500px;
+	margin: 20px auto;
+	font-weight: bold;
+}
+main dl dt {
+	display: inline-block;
+	border-bottom: solid black 1px;
+}
+main dl dd {
+	padding: 1em 0;
+}
+.banner {
+	display: flex;
+	width: 500px;
+	margin: 0 auto;
+	justify-content: space-between;
+}
+/*footer ul {
+	display: flex;
+	justify-content: center;
+}
+footer ul li a {
+	display: inline-block;
+	text-align: center;
+}
+footer p {
+	text-align: center;
+}*/
+footer {
+	padding: 20px 0;
+	text-align: center;
+}
+footer li {
+	display: inline-block;
+}
+footer li+li::before {
+	content: "|";
+}
+@media (max-width: 600px) {
+	.banner {
+		display: block;
+	}
+	.banner p {
+		text-align: center;
+	}
+}
+
+#top footer nav .menu1 a,
+#concept footer nav .menu2 a,
+#goods footer nav .menu3 a,
+#faq footer nav .menu4 a,
+#contact footer nav .menu5 a,
+#company footer nav .menu6 a,
+footer ul li a:hover{
+	text-decoration: underline;
+	color: #ffffff;
+}
+nav label,
+input[type="checkbox"] {
+	display: none;
+}
+#top nav .menu1 a,
+#concept nav .menu2 a,
+#goods nav .menu3 a,
+#faq nav .menu4 a,
+#contact nav .menu5 a,
+#company nav .menu6 a{
+	color: #fee7b3;
+}
