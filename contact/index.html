@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="都内にある照明専門ブランド「Lumière」の紹介サイトです。">
+	<link rel="icon" href="../assets/images/favicon.ico">
+	<link rel="stylesheet" href="../assets/css/reset.css">
+	<link rel="stylesheet" href="../assets/css/common.css">
+	<link rel="stylesheet" href="../assets/css/common_sp.css" media="(max-width: 600px)">
+	<link rel="stylesheet" href="../assets/css/contact.css">
+
+	<title>お問い合わせフォーム Lumière</title>
+</head>
+
+<body id="contact">
+	<div class="header">
+		<header>
+			<h1><a href="../index.html"><img src="../assets/images/logo.png" alt="Lumière logo" width="150" height="50"></a></h1>
+		</header>
+		<hr>
+		<nav>
+			<input type="checkbox" id="menu">
+			<label for="menu"><span></span></label>
+			<ul>
+				<li class="menu1"><a href="../index.html">ホーム</a></li>
+				<li class="menu2"><a href="../concept/index.html">コンセプト</a></li>
+				<li class="menu3"><a href="../goods/index.html">商品紹介</a></li>
+				<li class="menu4"><a href="../faq/index.html">よくあるご質問</a></li>
+				<li class="menu5"><a href="index.html">お問い合わせ</a></li>
+				<li class="menu6"><a href="../company/index.html">会社概要</a></li>
+			</ul>
+		</nav>
+	</div><!--  /.header-->
+	<hr>
+	<main><!-- ここから -->
+		<div class="inner contact">
+			<h2>Contact Us</h2>
+			<div id="setumei">
+				<p>以下のフォームにご入力の上、送信してください。<br>
+					内容を確認後、担当者よりご連絡いたします。</p>
+				<p><a href="../faq/index.html">よくあるご質問</a>に、一般的なご質問の回答を掲載しております。事前にご確認ください。<br>
+					製品に関するお問い合わせの際は、製品の「型番」または「製品名」をお伝えいただくとスムーズです。</p>
+			</div>
+
+			<!-- Form Area -->
+			<div class="contact-form">
+
+				<!-- Form -->
+				<form id="contact-us" method="post" action="index_answer.html" onsubmit="return validateForm()">
+					<!-- Left Inputs -->
+					<div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
+						<!-- Name -->
+						<input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
+						<input type="text" name="furigana" id="furigana" required="required" class="form"
+							placeholder="Furigana" />
+
+						<!-- Email -->
+						<input type="email" name="mail" id="mail" required="required" class="form"
+							placeholder="Email" />
+						<!-- tel -->
+						<input type="tel" name="tel" id="tel" required="required" class="form" placeholder="Tel" />
+
+						
+						<input type="radio" id="category1" name="category">
+						<label for="category1">製品について</label><br class="sp-only">
+						<input type="radio" id="category2" name="category">
+						<label for="category2">特注のご相談</label><br class="sp-only">
+						<input type="radio" id="category3" name="category">
+						<label for="category3">ご注文</label><br class="sp-only">
+						<input type="radio" id="category4" name="category">
+						<label for="category4">修理・アフターサービス</label><br class="sp-only">
+						<input type="radio" id="category5" name="category">
+						<label for="category5">その他</label><br class="sp-only">
+
+					
+
+
+						<!-- Subject -->
+						<input type="text" name="model number" id="model number" required="model number" class="form"
+							placeholder="Model number" />
+						<input type="text" name="product name" id="product name" required="product name" class="form"
+							placeholder="Product name" />
+
+
+						<!-- Right Inputs -->
+
+						<!-- Message -->
+						<textarea name="message" id="message" class="form textarea" placeholder="Message"></textarea>
+					</div><!-- End Right Inputs -->
+					<!-- Bottom Submit -->
+					<div class="relative fullwidth col-xs-12">
+						<!-- Send Button -->
+						<button type="submit" id="submit" name="submit" class="form-btn semibold">送信</button>
+					</div><!-- End Bottom Submit -->
+					<!-- Clear -->
+					<div class="clear">
+						<p>お電話でのお問い合わせ
+							お急ぎのご用件や、お電話でのご相談をご希望の場合は、下記までご連絡ください。</p>
+					</div>
+					<address>電話番号03-1234-5678</address>
+					<p>受付時間 平日8:00 - 20:00 / 土日祝10:00 - 18:00</p>
+
+
+				</form>
+
+				<!-- Your Mail Message -->
+				<div class="mail-message-area">
+					<!-- Message -->
+					<div class="alert gray-bg mail-message not-visible-message">
+						<strong>ありがとうございました。</strong><br>
+						 お問い合わせを受け付けました。
+					</div>
+				</div>
+
+			</div><!-- End Contact Form Area -->
+		</div><!-- End Inner -->
+	</main>
+	<hr>
+	<footer>
+		<ul>
+			<li class="menu1"><a href="../index.html">ホーム</a></li>
+				<li class="menu2"><a href="../concept/index.html">コンセプト</a></li>
+				<li class="menu3"><a href="../goods/index.html">商品紹介</a></li>
+				<li class="menu4"><a href="../faq/index.html">よくあるご質問</a></li>
+				<li class="menu5"><a href="index.html">お問い合わせ</a></li>
+				<li class="menu6"><a href="../company/index.html">会社概要</a></li>
+		</ul>
+		<p><small>Copyright 2025 Lumiére All rights reserved.</small></p>
+	</footer>
+</body>
+<script>
+function validateForm(event) {
+	const form = document.getElementById("contact-us");
+	const requiredFields = form.querySelectorAll("[required]");
+	let isValid = true;
+
+	// 各必須項目チェック
+	requiredFields.forEach(field => {
+		if (!field.value.trim()) {
+			isValid = false;
+			field.style.border = "2px solid red"; // 未入力項目を赤枠で強調
+		} else {
+			field.style.border = ""; // 入力済みならリセット
+		}
+	});
+
+	// ラジオボタン（お問い合わせ種別）のチェック
+	const radioChecked = form.querySelector('input[name="category"]:checked');
+	if (!radioChecked) {
+		isValid = false;
+		alert("お問い合わせの種別を選択してください。");
+		return false;
+	}
+
+	// 未入力があれば送信ストップ
+	if (!isValid) {
+		alert("すべての必須項目を入力してください。");
+		event.preventDefault(); // フォーム送信をブロック
+		return false;
+	}
+
+	// すべてOKなら送信許可
+	return true;
+}
+</script>
+</html>
